@@ -31,15 +31,15 @@ app.use((req,res,next)=>{
 });
 
 //for maintenance mode
-app.use((req,res,next)=>{
-    res.render('maintenance.hbs',{
-        pageTitle:'Home',
-        welcomeMessage:'Our site is currently under maintenance, Kindly visit us later'
-    })
+// app.use((req,res,next)=>{
+//     res.render('maintenance.hbs',{
+//         pageTitle:'Home',
+//         welcomeMessage:'Our site is currently under maintenance, Kindly visit us later'
+//     })
 
-    // next();
+//     // next();
 
-});
+// });
 
 
 app.use(express.static(path.join(__dirname, 'public')));
@@ -73,6 +73,14 @@ app.get('/',(req, res) =>  {
         pageTitle:'Home',
         welcomeMessage:'Welcome to my Home Page'
      
+    });
+});
+
+
+app.get('/projects',(req,res)=>{
+    res.render('portfolio.hbs',{
+        pageTitle: 'PortFolios',
+        welcomeMessage:'Portfolios to be Displayed here'
     });
 });
 
